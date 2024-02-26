@@ -20,7 +20,7 @@ export class HomePageService {
 
   //Getting the Products from backend API
   getProducts():Observable<IProduct[]>{
-    let tempVar = this.http.get<IProduct[]>('https://localhost:5001/api/home/getproducts')
+    let tempVar = this.http.get<IProduct[]>('https://backendqk.azurewebsites.net/api/home/getproducts')
     console.log(tempVar)
     return tempVar
   }
@@ -51,7 +51,7 @@ export class HomePageService {
     user={emailID:userEmailID, password:userPassword,usertype:type};
     console.log(user)
 
-    let result=this.http.post<number>('https://login-service-qk.azurewebsites.net/api/LoginFunction?code=bVFKz69iYgDhe0W34IRoIn8S9FAoV_nWo-hHOY34OpvhAzFuULBixw==',user)
+    let result=this.http.post<number>('https://testfa123.azurewebsites.net/api/LoginFunction?code=BR843LpXuBAYkLfPfyLuPllpMil7EfGJ5Rh-Qh0lBWpFAzFuhTQbkw==',user)
     return result
 
   }
